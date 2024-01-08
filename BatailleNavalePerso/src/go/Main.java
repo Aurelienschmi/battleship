@@ -2,7 +2,7 @@ package go;
 
 import bo.Boat;
 import bo.Player;
-import bo.Jeu;
+import bo.Game;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Menu de démarrage
         System.out.println("Bienvenue dans le jeu de bataille navale !\n ");
         System.out.println("La bataille navale se joue sur une grille de 10x10.");
         System.out.println("Chaque joueur place ses bateaux sur sa grille.");
@@ -95,7 +94,7 @@ public class Main {
         boatsJ2.add(sous_marin2);
         boatsJ2.add(torpilleur2);
 
-        Jeu j = new Jeu();
+        Game j = new Game();
         Player J1 = new Player();
         Player J2 = new Player();
 
@@ -139,11 +138,11 @@ public class Main {
         System.out.println("\nPlateau d'attaque du Joueur 1 !\n");
         J1.getAttackBoard().displayAttackBoard();  // Afficher l'attackBoard du joueur J1
 
-        System.out.println("\nPlateau du Joueur 2 !\n");
-        J2.getBoard().display();
+        //System.out.println("\nPlateau du Joueur 2 !\n");
+        //J2.getBoard().display();
 
-        System.out.println("\nPlateau d'attaque du Joueur 2 !\n");
-        J2.getAttackBoard().displayAttackBoard();  // Afficher l'attackBoard du joueur J2
+        //System.out.println("\nPlateau d'attaque du Joueur 2 !\n");
+        //J2.getAttackBoard().displayAttackBoard();  // Afficher l'attackBoard du joueur J2
 
         Scanner scanner = new Scanner(System.in);
 
@@ -171,6 +170,7 @@ public class Main {
             } while (positionsChoisiesJ2.contains(x2 + "," + y2));
 
             positionsChoisiesJ2.add(x2 + "," + y2);
+
             J2.getAttackBoard().checkAttack(J1.getBoard(), x2, y2);
             J1.getBoard().checkAttack(J2.getAttackBoard(), x2, y2);
 
@@ -197,11 +197,11 @@ public class Main {
             System.out.println("\nPlateau d'attaque du Joueur 1 !\n");
             J1.getAttackBoard().display();  // Afficher l'attackBoard du joueur J1
 
-            System.out.println("\nPlateau du Joueur 2 !\n");
-            J2.getBoard().display();
+            //System.out.println("\nPlateau du Joueur 2 !\n");
+            //J2.getBoard().display();
 
-            System.out.println("\nPlateau d'attaque du Joueur 2 !\n");
-            J2.getAttackBoard().display();  // Afficher l'attackBoard du joueur J2
+            //System.out.println("\nPlateau d'attaque du Joueur 2 !\n");
+            //J2.getAttackBoard().display();  // Afficher l'attackBoard du joueur J2
 
             if (indexBoatSunkJ2.get(0) && indexBoatSunkJ2.get(1) && indexBoatSunkJ2.get(2) && indexBoatSunkJ2.get(3) && indexBoatSunkJ2.get(4)){
                 System.out.println("le joueur 1 à gagné la partie !");

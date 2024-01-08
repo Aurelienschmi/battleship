@@ -18,8 +18,6 @@ public class Player {
         return AttackBoard;
     }
 
-
-
     public void updateAttackBoardOnSunk(Boat bo) {
         int x = bo.getX();
         int y = bo.getY();
